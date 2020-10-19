@@ -6,14 +6,20 @@
 
 1.1. O servidor de chat
 
+- ./chatbacana.sh servidor deve inicializar o servidor
 - [] Uma vez inicializado, o servidor deve exibir na tela um propt aguardando os comandos do usuario
 
         servidor>
 
 - [] list  - lista os nomes de todos os usuarios logados, um por linha. 
 - [] list  - nenhum usuario nao lista nada
+
 - [] time  - informa o intervalo de tempo desde que o servidor foi iniciado 
+- [] time  - informa o intervalo de tempo em segundos
+
+
 - [] reset - remove todos os usuarios que foram criados nessa instancia de execucao
+
 - [] quit  - finaliza o servidor
 - [] quit  - remove todos os arquivos temporarios
 
@@ -23,6 +29,7 @@ Reset e quit soh serao executados se nao houverem clientes conectados
 
 Os clientes serao iniciados apos o servidor ser iniciado. 
 
+- ./chatbacana.sh cliente deve inicializar o cliente
 - [] Uma vez iniciado os usuarios serao recebidos por 
 
         cliente>
@@ -43,6 +50,11 @@ Os clientes serao iniciados apos o servidor ser iniciado.
 - [] list: lista o nome de todos os usuarios logados, inclusive do proprio usuario
 - [] list: se o usuario nao estiver logado, imprimir erro
 
+EX:
+    cliente> list
+    bilbo
+    frodo
+
 - [] logout: desloga do sistema mas nao encerra a execucao do cliente
 - [] logout: se o usuario nao estiver logado, imprimir erro
 
@@ -53,12 +65,42 @@ Os clientes serao iniciados apos o servidor ser iniciado.
 - [] msg <usuario> <mensagem>: se o usuario nao estiver logado, imprimir erro
 - [] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
 
+EX:
+    <terminal do bilbo>
+    cliente> msg frodo olah, vamos para valfenda? 
+    cliente>
+
+    <terminal do frodo>
+    cliente> [Mensagem do bilbo]: msg frodo olah, vamos para valfenda?
+    cliente>
+
+- [] quit: o usuario pode dar quit e voltar para o terminal
+- [] quit: da logout 
+
+EX:
+    <terminal do servidor>
+    servidor> list
+    bilbo
+    frodo
+    servidor>
+
+    <terminal do bilbo>
+    cliete> quit
+    /tmp$ 
+
+    <terminal do servidor>
+    servidor> list
+    frodo
+    servidor>
+
+
 OBS: o unico parametro que pode conter espacos eh mensagem.
 Nenhum parametro pode conter tabulacoes ou quebras de linha.
 
 2. Requisitos
 
 - [] Arquivos temporarios devem ser criados em /tmp
+- [] Certifique-se que os usuarios tem permissao
 - [] Todos os arquivos criados devem ser removidos quando os clientes e o servidor forem encerrados
 
 
