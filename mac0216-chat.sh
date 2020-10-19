@@ -13,8 +13,8 @@
 #  ASSINATURA NÃO SERÃO CORRIGIDOS E, AINDA ASSIM, PODERÃO SER PUNIDOS
 #  POR DESONESTIDADE ACADÊMICA.
 #
-#  Nome(s) :
-#  NUSP(s) :
+#  Nome(s) : Luã N. S. Santilli
+#  NUSP(s) : 11795492
 #
 #  Referências: Com exceção das rotinas fornecidas no enunciado e em
 #  sala de aula, caso você(s) tenha(m) utilizado alguma referência,
@@ -24,3 +24,5 @@
 #  Exemplo:
 #  - O algoritmo Quicksort foi baseado em
 #  http://www.ime.usp.br/~pf/algoritmos/aulas/quick.html
+
+
