@@ -7,15 +7,15 @@
 1.1. O servidor de chat
 
 - ./chatbacana.sh servidor deve inicializar o servidor
-- [] Uma vez inicializado, o servidor deve exibir na tela um propt aguardando os comandos do usuario
+- [X] Uma vez inicializado, o servidor deve exibir na tela um propt aguardando os comandos do usuario
 
         servidor>
 
-- [] list  - lista os nomes de todos os usuarios logados, um por linha. 
-- [] list  - nenhum usuario nao lista nada
+- [x] list  - lista os nomes de todos os usuarios logados, um por linha. 
+- [x] list  - nenhum usuario nao lista nada
 
-- [] time  - informa o intervalo de tempo desde que o servidor foi iniciado 
-- [] time  - informa o intervalo de tempo em segundos
+- [X] time  - informa o intervalo de tempo desde que o servidor foi iniciado 
+- [X] time  - informa o intervalo de tempo em segundos
 
 
 - [] reset - remove todos os usuarios que foram criados nessa instancia de execucao
@@ -30,33 +30,33 @@ Reset e quit soh serao executados se nao houverem clientes conectados
 Os clientes serao iniciados apos o servidor ser iniciado. 
 
 - ./chatbacana.sh cliente deve inicializar o cliente
-- [] Uma vez iniciado os usuarios serao recebidos por 
+- [X] Uma vez iniciado os usuarios serao recebidos por 
 
         cliente>
 
-- [] create <usuario> <senha> - cria um novo usuario e senha
-- [] create <usuario> <senha> - So podem ser perdidas enquanto o servidor exectuar um reset ou quit
-- [] create <usuario> <senha> - Se o usuario <user> ja existir, a string ERRO deve ser impressa
+- [X] create <usuario> <senha> - cria um novo usuario e senha
+- [] create <usuario> <senha> - So podem ser perdidas enquanto o servidor executar um reset ou quit
+- [X] create <usuario> <senha> - Se o usuario <user> ja existir, a string ERRO deve ser impressa
 
 - [] passwd <usuario> <antiga> <nova>: altera a senha de antiga para nova. 
 - [] passwd <usuario> <antiga> <nova>: se o usuario nao existir a string ERRO devo ser impressa
 - [] passwd <usuario> <antiga> <nova>: se a senha estiver errada a string ERRO deve ser impressa
 
-- [] login <usuario> <senha>: loga como o <usuario> com a senha <senha>. 
-- [] login <usuario> <senha>: se o usuario nao existir, a string ERRO deve ser impressa
-- [] login <usuario> <senha>: se a senha estiver errada, a string ERRO deve ser impressa
-- [] login <usuario> <senha>: se o usuario ja estiver logao, a string ERRO deve ser impressa
+- [X] login <usuario> <senha>: loga como o <usuario> com a senha <senha>. 
+- [X] login <usuario> <senha>: se o usuario nao existir, a string ERRO deve ser impressa
+- [X] login <usuario> <senha>: se a senha estiver errada, a string ERRO deve ser impressa
+- [X] login <usuario> <senha>: se o usuario ja estiver logao, a string ERRO deve ser impressa
 
-- [] list: lista o nome de todos os usuarios logados, inclusive do proprio usuario
-- [] list: se o usuario nao estiver logado, imprimir erro
+- [X] list: lista o nome de todos os usuarios logados, inclusive do proprio usuario
+- [X] list: se o usuario nao estiver logado, imprimir erro
 
 EX:
     cliente> list
     bilbo
     frodo
 
-- [] logout: desloga do sistema mas nao encerra a execucao do cliente
-- [] logout: se o usuario nao estiver logado, imprimir erro
+- [X] logout: desloga do sistema mas nao encerra a execucao do cliente
+- [X] logout: se o usuario nao estiver logado, imprimir erro
 
 - [] msg <usuario> <mensagem>: escreve na tela do <usario> a <mensagem>
 - [] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
@@ -74,8 +74,8 @@ EX:
     cliente> [Mensagem do bilbo]: msg frodo olah, vamos para valfenda?
     cliente>
 
-- [] quit: o usuario pode dar quit e voltar para o terminal
-- [] quit: da logout 
+- [X] quit: o usuario pode dar quit e voltar para o terminal
+- [X] quit: da logout 
 
 EX:
     <terminal do servidor>
