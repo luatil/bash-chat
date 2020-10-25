@@ -54,9 +54,31 @@ function servidor() {
     done
 }
 
+function change_password() {
+    USERNAME=$1
+    OLD_PASSWORD=$2
+    NEW_PASSWORD=$3
+    grep -Eq "$USERNAME $OLD_PASSWORD (logged|absent)" users 
+    if [ $? -eq 0 ]
+    then
+        sed -ir "s/$USERNAME $OLD_PASSWORD \([a-zA-Z0-9]*\)/$USERNAME $NEW_PASSWORD \1/" users
+        return 0
+    else 
+        echo "ERRO"
+        return 1
+    fi
+}
+
+
+function check_user_existence() {
+    USERNAME=$1
+    awk '{print $1}' users | grep -q $USERNAME
+    return $?
+}
+
 function create_user() {
     echo "create_user"
-    awk '{print $1}' users | grep -q $1
+    check_user_existence $1
     if [ $? -eq 1 ]
     then
         echo $1 $2 "absent" >> users
@@ -101,7 +123,7 @@ function cliente() {
     while [[ $COMMAND != "quit" ]]
     do 
         echo -n "cliente> "
-        read COMMAND FIRST_ARGUMENT SECOND_ARGUMENT
+        read COMMAND FIRST_ARGUMENT SECOND_ARGUMENT THIRD_ARGUMENT
         if [ $COMMAND == "list" ]
         then
             cliente_list $LOGGED
@@ -111,6 +133,9 @@ function cliente() {
         elif [ $COMMAND == "time" ]
         then 
             servidor_time
+        elif [ $COMMAND == "passwd" ]
+        then 
+            change_password $FIRST_ARGUMENT $SECOND_ARGUMENT $THIRD_ARGUMENT
         elif [ $COMMAND == "login" ]
         then 
             login $FIRST_ARGUMENT $SECOND_ARGUMENT $LOGGED

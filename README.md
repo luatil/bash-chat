@@ -18,10 +18,10 @@
 - [X] time  - informa o intervalo de tempo em segundos
 
 
-- [  ] reset - remove todos os usuarios que foram criados nessa instancia de execucao
+- [ ] reset - remove todos os usuarios que foram criados nessa instancia de execucao
 
-- [  ] quit  - finaliza o servidor
-- [  ] quit  - remove todos os arquivos temporarios
+- [ ] quit  - finaliza o servidor
+- [ ] quit  - remove todos os arquivos temporarios
 
 Reset e quit soh serao executados se nao houverem clientes conectados
 
@@ -35,12 +35,12 @@ Os clientes serao iniciados apos o servidor ser iniciado.
         cliente>
 
 - [X] create <usuario> <senha> - cria um novo usuario e senha
-- [  ] create <usuario> <senha> - So podem ser perdidas enquanto o servidor executar um reset ou quit
+- [ ] create <usuario> <senha> - So podem ser perdidas enquanto o servidor executar um reset ou quit
 - [X] create <usuario> <senha> - Se o usuario <user> ja existir, a string ERRO deve ser impressa
 
-- [  ] passwd <usuario> <antiga> <nova>: altera a senha de antiga para nova. 
-- [  ] passwd <usuario> <antiga> <nova>: se o usuario nao existir a string ERRO devo ser impressa
-- [  ] passwd <usuario> <antiga> <nova>: se a senha estiver errada a string ERRO deve ser impressa
+- [X] passwd <usuario> <antiga> <nova>: altera a senha de antiga para nova. 
+- [X] passwd <usuario> <antiga> <nova>: se o usuario nao existir a string ERRO devo ser impressa
+- [X] passwd <usuario> <antiga> <nova>: se a senha estiver errada a string ERRO deve ser impressa
 
 - [X] login <usuario> <senha>: loga como o <usuario> com a senha <senha>. 
 - [X] login <usuario> <senha>: se o usuario nao existir, a string ERRO deve ser impressa
@@ -58,12 +58,12 @@ EX:
 - [X] logout: desloga do sistema mas nao encerra a execucao do cliente
 - [X] logout: se o usuario nao estiver logado, imprimir erro
 
-- [  ] msg <usuario> <mensagem>: escreve na tela do <usario> a <mensagem>
-- [  ] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
-- [  ] msg <usuario> <mensagem>: na tela do <usuario> a mensagem deve ser exibida da seguinte forma:
+- [ ] msg <usuario> <mensagem>: escreve na tela do <usario> a <mensagem>
+- [ ] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
+- [ ] msg <usuario> <mensagem>: na tela do <usuario> a mensagem deve ser exibida da seguinte forma:
     [Mensagem do <remetente>]:
-- [  ] msg <usuario> <mensagem>: se o usuario nao estiver logado, imprimir erro
-- [  ] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
+- [ ] msg <usuario> <mensagem>: se o usuario nao estiver logado, imprimir erro
+- [ ] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
 
 EX:
     <terminal do bilbo>
@@ -99,9 +99,9 @@ Nenhum parametro pode conter tabulacoes ou quebras de linha.
 
 2. Requisitos
 
-- [  ] Arquivos temporarios devem ser criados em /tmp
-- [  ] Certifique-se que os usuarios tem permissao
-- [  ] Todos os arquivos criados devem ser removidos quando os clientes e o servidor forem encerrados
+- [ ] Arquivos temporarios devem ser criados em /tmp
+- [ ] Certifique-se que os usuarios tem permissao
+- [ ] Todos os arquivos criados devem ser removidos quando os clientes e o servidor forem encerrados
 
 
 
