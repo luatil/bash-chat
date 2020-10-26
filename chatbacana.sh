@@ -97,7 +97,8 @@ function login() {
     # If both conditions are true, check if the 
     if [[ $? -eq 0 && $3 == false ]]
     then
-        sed -i "s/$1 $2 absent/$1 $2 logged/" users
+        TERMINAL_ADDRESS=$(tty)
+        sed -ir "s|$1 $2 absent /dev/pts/[0-9]*|$1 $2 logged $TERMINAL_ADDRESS|" users
         return 0
     else 
         echo "ERRO"
