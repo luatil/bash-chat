@@ -18,7 +18,7 @@
 - [X] time  - informa o intervalo de tempo em segundos
 
 
-- [ ] reset - remove todos os usuarios que foram criados nessa instancia de execucao
+- [X] reset - remove todos os usuarios que foram criados nessa instancia de execucao
 
 - [ ] quit  - finaliza o servidor
 - [ ] quit  - remove todos os arquivos temporarios
@@ -58,11 +58,11 @@ EX:
 - [X] logout: desloga do sistema mas nao encerra a execucao do cliente
 - [X] logout: se o usuario nao estiver logado, imprimir erro
 
-- [ ] msg <usuario> <mensagem>: escreve na tela do <usario> a <mensagem>
-- [ ] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
-- [ ] msg <usuario> <mensagem>: na tela do <usuario> a mensagem deve ser exibida da seguinte forma:
+- [X] msg <usuario> <mensagem>: escreve na tela do <usario> a <mensagem>
+- [X] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
+- [X] msg <usuario> <mensagem>: na tela do <usuario> a mensagem deve ser exibida da seguinte forma:
     [Mensagem do <remetente>]:
-- [ ] msg <usuario> <mensagem>: se o usuario nao estiver logado, imprimir erro
+- [ ] msg <usuario> <mensagem>: se o remetente nao estiver logado, imprimir erro
 - [ ] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
 
 EX:

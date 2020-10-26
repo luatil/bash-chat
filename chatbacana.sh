@@ -49,7 +49,7 @@ function servidor() {
             reset
         elif [ $COMMAND == "quit" ]
         then 
-            quit
+            servidor_quit
         fi
     done
 }
@@ -118,21 +118,41 @@ function cliente_logout() {
     fi
 }
 
+function msg_user() {
+    LOGGED_STATUS=$1
+    SENDER_USERNAME=$2
+    RECEIVER_USERNAME=$3
+    MESSAGE_STRING=${@:4}
+    # Check if both sender and receiver are logged
+    read _ _ _ TERMINAL_ADRESS < <(grep -E "$RECEIVER_USERNAME [a-zA-Z0-9]* logged" users)
+    if [[ $? == 0 && $LOGGED_STATUS == true ]]
+    then 
+        #TERMINAL_ADRESS="/dev/pts/3"
+        echo "[Mensagem do $SENDER_USERNAME]:" $MESSAGE_STRING > "$TERMINAL_ADRESS"
+        return 0
+    else 
+        echo "ERRO"
+        return 1
+    fi
+}
+
 function cliente() {
     LOGGED=false
     while [[ $COMMAND != "quit" ]]
     do 
         echo -n "cliente> "
         read COMMAND FIRST_ARGUMENT SECOND_ARGUMENT THIRD_ARGUMENT
+        # Check for null argumet
         if [ $COMMAND == "list" ]
         then
             cliente_list $LOGGED
         elif [ $COMMAND == "create" ]
         then
             create_user $FIRST_ARGUMENT $SECOND_ARGUMENT
-        elif [ $COMMAND == "time" ]
+        elif [ $COMMAND == "msg" ]
         then 
-            servidor_time
+            echo $THIRD_ARGUMENT
+            msg_user $LOGGED $USER $FIRST_ARGUMENT $SECOND_ARGUMENT $THIRD_ARGUMENT
         elif [ $COMMAND == "passwd" ]
         then 
             change_password $FIRST_ARGUMENT $SECOND_ARGUMENT $THIRD_ARGUMENT
