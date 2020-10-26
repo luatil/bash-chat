@@ -1,6 +1,9 @@
 #!/bin/bash
 
 LOCAL_TIME=$(date +%s)
+# This could be used to prevent dumb shit
+LOGGED_TOKEN
+ABSENT_TOKEN
 
 function list() {
     grep "logged" users | awk '{print $1}'
@@ -34,11 +37,15 @@ function servidor_quit() {
 }
 
 function servidor() {
+    > users
     while [[ $COMMAND != "quit" ]]
     do 
         echo -n "servidor> "
         read COMMAND
-        if [ $COMMAND == "list" ]
+        if [ -z $COMMAND ]
+        then
+            continue
+        elif [ $COMMAND == "list" ]
         then
             list
         elif [ $COMMAND == "time" ]
@@ -81,7 +88,7 @@ function create_user() {
     check_user_existence $1
     if [ $? -eq 1 ]
     then
-        echo $1 $2 "absent" >> users
+        echo $1 $2 "absent /dev/pts/0" >> users
         return 0
     else 
         echo "ERRO"
@@ -144,7 +151,10 @@ function cliente() {
         echo -n "cliente> "
         read COMMAND FIRST_ARGUMENT SECOND_ARGUMENT THIRD_ARGUMENT
         # Check for null argumet
-        if [ $COMMAND == "list" ]
+        if [ -z $COMMAND ]
+        then 
+            continue
+        elif [ $COMMAND == "list" ]
         then
             cliente_list $LOGGED
         elif [ $COMMAND == "create" ]
@@ -152,7 +162,6 @@ function cliente() {
             create_user $FIRST_ARGUMENT $SECOND_ARGUMENT
         elif [ $COMMAND == "msg" ]
         then 
-            echo $THIRD_ARGUMENT
             msg_user $LOGGED $USER $FIRST_ARGUMENT $SECOND_ARGUMENT $THIRD_ARGUMENT
         elif [ $COMMAND == "passwd" ]
         then 
@@ -187,16 +196,19 @@ function cliente_quit() {
     return 0
 }
 
+function main() {
+    if [ $# -ne 1 ]
+    then 
+        exit 1
+    elif [ $1 == "servidor" ]
+    then 
+        servidor
+    elif [ $1 == "cliente" ]
+    then 
+        cliente
+    fi
+}
 
+main $1
 
-if [ $1 == "servidor" ]
-then 
-    servidor
-elif [ $1 == "cliente" ]
-then 
-    cliente
-fi
-
-
-
-exit 1
+exit 0

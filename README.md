@@ -20,8 +20,8 @@
 
 - [X] reset - remove todos os usuarios que foram criados nessa instancia de execucao
 
-- [ ] quit  - finaliza o servidor
-- [ ] quit  - remove todos os arquivos temporarios
+- [X] quit  - finaliza o servidor
+- [X] quit  - remove todos os arquivos temporarios
 
 Reset e quit soh serao executados se nao houverem clientes conectados
 
@@ -35,7 +35,7 @@ Os clientes serao iniciados apos o servidor ser iniciado.
         cliente>
 
 - [X] create <usuario> <senha> - cria um novo usuario e senha
-- [ ] create <usuario> <senha> - So podem ser perdidas enquanto o servidor executar um reset ou quit
+- [X] create <usuario> <senha> - So podem ser perdidas enquanto o servidor executar um reset ou quit
 - [X] create <usuario> <senha> - Se o usuario <user> ja existir, a string ERRO deve ser impressa
 
 - [X] passwd <usuario> <antiga> <nova>: altera a senha de antiga para nova. 
@@ -62,8 +62,8 @@ EX:
 - [X] msg <usuario> <mensagem>: se o usuario nao estiver logao, imprimir ERRO
 - [X] msg <usuario> <mensagem>: na tela do <usuario> a mensagem deve ser exibida da seguinte forma:
     [Mensagem do <remetente>]:
-- [ ] msg <usuario> <mensagem>: se o remetente nao estiver logado, imprimir erro
-- [ ] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
+- [X] msg <usuario> <mensagem>: se o remetente nao estiver logado, imprimir erro
+- [X] msg <usuario> <mensagem>: <mensagem> pode conter espacos 
 
 EX:
     <terminal do bilbo>
