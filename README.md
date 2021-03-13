@@ -1,7 +1,5 @@
 # README
 
-# Entrega: 8 da matina de 4 de novembro de 2020
-
 # TODO 
 
 1.1. O servidor de chat
@@ -99,9 +97,9 @@ Nenhum parametro pode conter tabulacoes ou quebras de linha.
 
 2. Requisitos
 
-- [ ] Arquivos temporarios devem ser criados em /tmp
-- [ ] Certifique-se que os usuarios tem permissao
-- [ ] Todos os arquivos criados devem ser removidos quando os clientes e o servidor forem encerrados
+- [X] Arquivos temporarios devem ser criados em /tmp
+- [X] Certifique-se que os usuarios tem permissao
+- [X] Todos os arquivos criados devem ser removidos quando os clientes e o servidor forem encerrados
 
 
 
