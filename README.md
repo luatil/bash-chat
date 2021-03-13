@@ -1,7 +1,5 @@
 # README
 
-# TODO 
-
 1.1. O servidor de chat
 
 - ./chatbacana.sh servidor deve inicializar o servidor
